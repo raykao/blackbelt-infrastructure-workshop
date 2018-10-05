@@ -1,6 +1,6 @@
-# Infra Workshopp
+# Intro to OSS/Linux Infra Workshopp
 
-This lab is a work in progress.  It is designed to understand how to 
+This lab is a work in progress.  It is designed to understand how to deploy foundational compute Infrastructure on Azure with Linux on Azure, Azure Services and additional Open Source Software tools.
 
 ## Overview
 
