@@ -46,3 +46,7 @@ export AZ_IMAGE_SKU="18.04-LTS"
 export AZ_DC_LOCATION="canada central"
 export AZ_VM_SIZE="Standard_DS2_v2"
 ```
+
+```
+packer build -var-file="variables.json" template.json
+```
