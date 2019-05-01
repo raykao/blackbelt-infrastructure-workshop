@@ -37,7 +37,8 @@ See also:
     - **NOTE:** this command should only be used if you are CERTAIN of removing a file!!! **THERE IS NO UNDO** remove
     - **Safety tip:** if you're new to navigating the file structure...best to change directory to the target folder and then remove the file/folder
 
-## Create or Append to a file
+## Create or Append to a file 
+
 You can also pipe output directly to a file in two ways:
 - ```>``` writes output directly to a file.  If the file exists, overwrite content with output, otherwise create the file.  e.g. ```echo "hello world" > test.txt```
 - ```>>``` appends output directly to a file.  If the file exists, append output to file, otherwise create the file.  e.g. ```echo "hello world" >> test.txt```
