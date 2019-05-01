@@ -15,7 +15,13 @@ This lab is a work in progress.  It is designed to understand how to deploy foun
     - OS offerings (RHEL vs. CentOS vs. SUSE vs. Ubuntu)
     - Red Hat Partnership
     - Azure Marketplace Offerings
-1. Essential Linux Commands + Cheatsheet (30 Minutes)
+1. Creating a Linux VM
+    - Azure Cloud Shell
+        - ssh-keygen
+        - cat ~/.ssh/id_rsa.pub
+    - Azure Portal [Lab](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-portal) (10 Minutes)
+    - Azure CLI [Lab](https://docs.microsoft.com/en-us/azure/virtual-machines/linux/quick-create-cli) (10 Minutes)
+1. [Linux Essential Commands, Files/Folders + Cheatsheet](./Linux_Essentials) (60 Minutes)
     - sudo
     - ls
     - cd
@@ -27,18 +33,20 @@ This lab is a work in progress.  It is designed to understand how to deploy foun
     - adduser
     - usermod
     - export and environment variables
-1. Creating a Linux VM
-    - Azure Portal [Lab] (10 Minutes)
-    - Azure CLI [Lab] (10 Minutes)
+    - SystemD/SystemCTL/Service Files
+1. Configuration Management Hands With Plain Old Bash and Shell Scripts (60 Minutes)
+    - Ubuntu apt-get install everything
+    - ```bash ./<your_file>.sh```
+1. --- Lunch Break ---
 1. Creating Custom VM Images Overview (15 Minutes)
-1. Creating Custom VM Images with Hashicorp Packer [Lab] (30 Minutes)
+1. Creating Custom VM Images with Hashicorp Packer [Lab] (60 Minutes)
     - Installing Packer
     - Packer JSON Templates
     - "Builders"
     - "Provisioners"
     - Building an Image
     - Profit
-1. Terraform Overview (15 Minutes)
+1. Terraform Overview (30 Minutes)
 1. Deploying Azure VMSS with Terraform [Lab] (60 Minutes)
     - Hashicorp Templating Language
     - Resource Group
@@ -48,7 +56,6 @@ This lab is a work in progress.  It is designed to understand how to deploy foun
     - VM Size
     - VM Image
     - SSH Keys
-1. --- Lunch Break ---
 1. Configuration Management Overview (30 Minutes)
     - Ansible
     - Puppet
@@ -57,7 +64,6 @@ This lab is a work in progress.  It is designed to understand how to deploy foun
     - Installing Ansible
     - Ansible Playbook Anatomy
     - Running a Playbook
-1. Lift and Shift Customer Conversations [Soft Skills Training] (60 Minutes)
 1. Daily Wrap-up (30 Minutes)
 
 ### Day 2
@@ -66,17 +72,29 @@ This lab is a work in progress.  It is designed to understand how to deploy foun
     - Databases (MySQL/MariaDB/Percona/PostgreSQL and Mongo)
     - Programming Languages (PHP, Ruby, Python, Node)
 1. Deploying a LAMP (Linux, Apache, MySQL and PHP) Server (60 Minutes)
-1. Azure Load Balancers, Service Discovery, DNS and Hashicorp Consul (60 Minutes)
-1. VPN Gateways and Multi Datacentre deployments (30 Minutes)
+1. Relational vs. Non-Relational/NoSQL Services on Azure (30 Minutes)
+    - Microsoft Databases for MySQL/MariaDB/Postgres
+    - CosmosDB vs. Mongo/Cassandara/Gremlin
 1. --- Lunch Break ---
-1. Installing Hashicorp Consul (30 Minutes)
-    - Agent/Server Mode
-    - Creating an Upstart/System.d auto start service
-1. Multi Data Centre Service Discovery with Consul and Azure Traffic Manager (30 Minutes)
-1. Configuring Consul and/or Azure Traffic Manager (60 Minutes)
-    - Setting up Service Discovery
-    - Cross Datacentre Communication/Failover
-1. Managing and Sharing Your Data Centre as Code (30 Minutes)
-    - Git/GitHub/Azure Repos
-    - Build/Release Pipelines
+1. Lift and Shift Customer Conversations [Soft Skills Training] (30 Minutes)
+1. Docker vs. Kubernetes (30 Minutes)
+    - What are Microservices
+    - What is Docker vs. “Containers”
+    - What is Kubernetes (K8s)
+1. Containers on Azure (30 Minutes)
+    - App Services
+    - Azure Kubernetes Service
+    - Azure Container Registry
+    - Functions
+    - Marketplace Offerings/Partners
+1. One of:
+    1. Build your first Docker Container and Deploy to App Services (30 Minutes)
+        - Deploy Azure App Service - Web App for Containers
+        - Deploy Azure CosmosDB
+        - Build a Docker Image
+        - Publish to Azure Container Registry
+        - Connect to CosmosDB
+    1. Managing and Sharing Your Data Centre as Code (30 Minutes)
+        - Git/GitHub/Azure Repos
+        - Build/Release Pipelines
 1. Wrap-up Next Steps (30 Minutes)
