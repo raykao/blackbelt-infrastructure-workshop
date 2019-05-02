@@ -1,0 +1,13 @@
+export AZ_SUBSCRIPTION_ID=""
+export AZ_TENANT_ID=""
+export AZ_CLIENT_ID=""
+export AZ_CLIENT_SECRET=""
+export AZ_PACKER_RESOURCE_GROUP_NAME=""
+export AZ_OS_TYPE="Linux"
+export AZ_IMAGE_PUBLISHER="Canonical"
+export AZ_IMAGE_OFFER="UbuntuServer"
+export AZ_IMAGE_SKU="18.04-LTS"
+export AZ_DC_LOCATION="canada central"
+export AZ_VM_SIZE="Standard_DS2_v2"
+
+packer build image_template.json
