@@ -13,7 +13,7 @@ locals {
 
 
 resource "azurerm_resource_group" "test" {
-  name     = "${local.}"
+  name     = "${var.rg_name}"
   location = "West US 2"
 }
 
@@ -67,46 +67,23 @@ resource "azurerm_lb_nat_pool" "lbnatpool" {
   frontend_ip_configuration_name = "PublicIPAddress"
 }
 
-resource "azurerm_lb_probe" "test" {
-  resource_group_name = "${azurerm_resource_group.test.name}"
-  loadbalancer_id     = "${azurerm_lb.test.id}"
-  name                = "http-probe"
-  protocol            = "Http"
-  request_path        = "/health"
-  port                = 8080
-}
-
 resource "azurerm_virtual_machine_scale_set" "test" {
   name                = "mytestscaleset-1"
   location            = "${azurerm_resource_group.test.location}"
   resource_group_name = "${azurerm_resource_group.test.name}"
 
-  # automatic rolling upgrade
-  automatic_os_upgrade = true
-  upgrade_policy_mode  = "Rolling"
-
-  rolling_upgrade_policy {
-    max_batch_instance_percent              = 20
-    max_unhealthy_instance_percent          = 20
-    max_unhealthy_upgraded_instance_percent = 5
-    pause_time_between_batches              = "PT0S"
-  }
-
-  # required when using rolling upgrade policy
-  health_probe_id = "${azurerm_lb_probe.test.id}"
+  upgrade_policy_mode = "manual"
 
   sku {
     name     = "Standard_D2s_v3"
     tier     = "Standard"
-    capacity = 2
+    capacity = 10
   }
 
   storage_profile_image_reference {
-    publisher = "Canonical"
-    offer     = "UbuntuServer"
-    sku       = "18.04-LTS"
-    version   = "latest"
+    id = "${var.cluster_vm_image_reference}"
   }
+
 
   storage_profile_os_disk {
     name              = ""
@@ -132,7 +109,7 @@ resource "azurerm_virtual_machine_scale_set" "test" {
 
     ssh_keys {
       path     = "/home/myadmin/.ssh/authorized_keys"
-      key_data = "${file("~/.ssh/demo_key.pub")}"
+      key_data = "${file("~/.ssh/id_rsa.pub")}"
     }
   }
 
